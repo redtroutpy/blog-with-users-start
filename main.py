@@ -13,10 +13,11 @@ from flask_gravatar import Gravatar
 from functools import wraps
 from flask import abort
 from flask_gravatar import Gravatar
+import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = b'\xd2\xa4}\xe1\xe4\xb5\x80\x9d\xd2i\x88\x14\xc5Q\xc9\xb6'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
